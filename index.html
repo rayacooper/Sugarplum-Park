@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to Sugarplum Park!' '</title>
+</head>
+<style>
+    #colorBlock {
+        width: 100px;
+        height: 100px;
+        background: black;
+
+</style>
+<body>
+    <div id="colorBlock"></div>
+    <button onClick="changeColors()">Click me to change colors!</button>
+<script>
+        const blockColors = ["red", "cyan", "magenta", "black"];
+        const myDiv = document.getElementById(`colorBlock`);
+        let counter = 0;
+
+        function changeColors() {
+           myDiv.style.background = blockColors[counter];
+           counter++;
+           if (counter > blockColors.length) {
+               counter = 0;
+           }
+        }
+</script>
+    
+</body>
+</html>
