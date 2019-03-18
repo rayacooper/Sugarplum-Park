@@ -23,7 +23,7 @@ console.log(shoppingList)
 
 const names = [`Suzie`, `Ben`, `Mark`, `Franklin`, `Ben`, `Sarah`, `Mark`];
 
-var namesUnique = names.filter(function(item, index){
+var namesUnique = names.filter(function(item, index){         /// Here it is!! This function deletes duplicates from an array!!!!
     return names.indexOf(item) >= index;
 });
 
@@ -75,3 +75,32 @@ for (let i = 0; i < oldBackPackStuff.length; i++) {
 }
 
 console.log(backpack)
+
+const meats = [`salmon`, `beef`, `bacon`, `egg`, `chicken`];
+
+const sandwiches = meats.map(function (e, i, a) {
+    return e += ` sandwich`;
+})
+
+console.log(sandwiches)
+
+const menuMaker = sandwiches.map(function(e, i) {
+    return e = (i + 1) + `: ` + e;
+})
+
+console.log(menuMaker)
+
+const hasTunaSandwich = false;
+
+function nextItem(xs, item) {
+    let x = undefined; 
+    if (xs.length > 1) {
+        for (var i = 0; i < xs.length; i++) {
+            if (xs[i] === item) {
+                x = xs[i+1];
+                break;
+            }
+        }
+    }
+    return x;
+  }
