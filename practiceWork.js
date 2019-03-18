@@ -132,3 +132,17 @@ function bobHunt(arr, name, value){
 
 bobHunt(userList, `name`, `Bob`);
 console.log(userList)
+
+const allTheNums = [1, 2, 3, 4, 5, 6, 7, 8];
+
+const newNums = allTheNums.filter(function(e, i, arr) {
+    e % 2 === 0;
+})
+
+console.log(allTheNums)
+
+// const evenNums = allTheNums.filter(function(e, i, arr){
+//     return e % 2 === 0;
+// });
+
+// console.log(evenNums)

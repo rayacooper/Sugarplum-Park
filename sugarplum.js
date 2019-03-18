@@ -92,15 +92,63 @@ console.log(menuMaker)
 
 const hasTunaSandwich = false;
 
-function nextItem(xs, item) {
-    let x = undefined; 
-    if (xs.length > 1) {
-        for (var i = 0; i < xs.length; i++) {
-            if (xs[i] === item) {
-                x = xs[i+1];
-                break;
-            }
+// function nextItem(xs, item) {
+//     var found = false;
+//     for (var x of xs) {
+//       if (found) return x;
+//       if (x == item) found = true;
+//     }
+//     return undefined;
+//   }
+
+  function nextItem(a, item) {
+    let found = false;
+  
+    for (let i of a) {
+      if (i > (a.length || item + 1)) return;
+      
+      if (found) {
+        return i;
+      }
+      
+      if (i === item) {
+        found = true;
+        
+        if (a.next) {
+          return a.next().value;
         }
+      }
     }
-    return x;
+    
+    console.log(a.length);
+    return undefined;
   }
+
+function isDivisible(n, x, y) {
+    let isdiv = false;
+    if (n % x === 0 && n % y === 0) {
+        isdiv = true;
+      }
+    return isdiv;
+}
+// function isDivisible(n, x, y) {                 Better Solution!!
+//     return n % x === 0 && n % y === 0
+//   }
+
+function positiveSum(arr) {
+    return arr.reduce((sum, e) => {
+      if (e > 0) {
+        sum += e; 
+      }
+      return sum;
+    }, 0);
+  }
+
+  const dummy = [1, 5, -12, 3, -17, 0, 35]; // should be 44
+  console.log(positiveSum(dummy))
+
+//   function positiveSum(arr) {                                    Better Way of Writing This Code (Ternary)
+//     return arr.reduce((a,b)=> a + (b > 0 ? b : 0),0);
+//  }
+
+  
