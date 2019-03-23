@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BUDGIES</title>
+    <link rel="stylesheet" href="budgies.css">
+</head>
+<body>
+    <div class = "buttons"> 
+        <button onclick="selectTheme('facebook')">Facebook</button>
+        <button onclick="selectTheme('devmountain')">DevMountain</button>
+        <button onclick="selectTheme('twitter')">Twitter</button>
+    </div>
+    <section class="first">
+        <h1>I Like Budgies</h1>
+    </section>
+    <section>
+       <h3> How many budgies you got? </h3>
+    </section>
+    <div>
+        <h1 id="counter">0</h1>
+        <button onclick="decrease()">-</button> 
+        <button onclick="reset()">RESET</button>
+        <button onclick="increase()"> +</button>
+    </div>
+    
+</body>
+<script src ="budgies.js"> </script>
+</html>

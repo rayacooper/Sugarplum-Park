@@ -1,0 +1,10 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body{
+    background-color: turquoise;
+    max-width: 800px;
+    margin: auto;
+}
