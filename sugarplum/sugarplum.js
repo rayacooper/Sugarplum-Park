@@ -183,3 +183,27 @@ const gooseFilter = (arr) => {
 let randomGeese = ["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"];
 
 console.log(gooseFilter(randomGeese))
+
+// function nbDig(n, d) {            THIS ALL WAS INCORRECT AND DUMB
+//   let k = []
+//   let c = 0
+//   for (i = 0; i < n; i++) {
+//     k.push(i*i)
+//   }
+//   for (j = 0; j < k.length; j++) {
+//     for (p = 0; p < k[j].toString().length; p++){
+//       if (k[j].toString()[p] === d) {
+//         c++
+//       }
+//     }
+//   }
+//   return c
+// }
+
+function nbDig(n, d) {
+  var res=0;
+      for (var g=0;g<=n;g++){
+        var square=(g*g+"").split("");
+        square.forEach((s)=>s==d?res++:null)
+      }return res;
+  }
