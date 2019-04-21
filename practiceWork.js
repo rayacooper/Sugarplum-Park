@@ -414,7 +414,7 @@ var countSheep = function (num){
 
   // Mr. Freeze! The whole point of this was to teach us that Object.freeze(obj) is a thing.
 
-  Object.freeze(MrFreeze)
+//   Object.freeze(MrFreeze)
 
 
   // Return planet name! The whole point of this was to teach us that switch statements
@@ -451,3 +451,59 @@ var countSheep = function (num){
     
     return name;
   }
+
+// Given a number, write a function to output its reverse digits. (e.g. given 123 the answer is 321)
+
+// Numbers should preserve their sign; i.e. a negative number should still be negative when reversed.
+
+  function reverseNumber(n) {
+    newVar = n.toString();
+    newVar = newVar.split("");    
+    newVar = newVar.reverse();
+    newVar = newVar.join("");
+    newVar = Number(newVar);
+    if (n < 0){
+        newVar = -newVar
+    }
+    return newVar;
+  }
+
+
+  // Best Practices Version!!
+
+//   function reverseNumber(n) {
+//     let isNegative = n < 0;  
+//     let reverseAsString = Math.abs(n).toString().split('').reverse().join('');
+//     let result = Number(reverseAsString);
+    
+//     return isNegative ? -result : result;
+//   }
+
+// return the two oldest/oldest ages within the array of ages passed in.
+function twoOldestAges(ages){
+    let a = 0;
+    let b = 0;
+    
+    for (let i = 0; i < ages.length; i++){
+      if (ages[i] >= a) {
+        a = ages[i];
+      }
+    }
+    
+    for (let i = 0; i < ages.length; i++){
+      if (ages[i] >= b && ages[i] !== a) {
+        b = ages[i];
+      }
+    }
+    return [b, a]; /// this is to make the smaller number go first
+  }
+
+
+/// better way to do this!!
+
+function twoOldestAgezz(ages){
+    const sortArr = ages.sort((a, b)=>{return b-a});
+    return [sortArr[1], sortArr[0]]
+}
+
+console.log(twoOldestAgezz([2,5,8,3,5,1,8,90,35,67,234]))
